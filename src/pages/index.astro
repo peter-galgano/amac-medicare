@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Top Banner -->
   <div class="bg-navy-950 text-white/70 text-xs sm:text-sm font-medium tracking-wide text-center py-2 px-4">
-    <span class="inline-flex items-center gap-2"><span class="text-xl">🇺🇸</span> As Seen on <span class="text-white font-semibold">Real America's Voice</span></span>
+    <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 18" fill="none"><rect width="24" height="18" rx="1.5" fill="#B22234"/><path d="M0 2h24M0 4h24M0 6h24M0 8h24M0 10h24M0 12h24M0 14h24M0 16h24" stroke="white" stroke-width="1.385"/><rect width="10" height="9.692" rx="0.5" fill="#3C3B6E"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(0.4, 0.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(2, 0.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(3.6, 0.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(5.2, 0.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(6.8, 0.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(1.2, 1.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(2.8, 1.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(4.4, 1.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(6, 1.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(0.4, 2.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(2, 2.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(3.6, 2.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(5.2, 2.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(6.8, 2.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(1.2, 3.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(2.8, 3.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(4.4, 3.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(6, 3.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(0.4, 4.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(2, 4.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(3.6, 4.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(5.2, 4.4)"/><circle cx="1.5" cy="1.2" r="0.45" fill="white" transform="translate(6.8, 4.4)"/></svg> As Seen on <span class="text-white font-semibold">Real America's Voice</span></span>
   </div>
 
   <!-- Sticky Header -->
@@ -97,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
     <h2 class="text-center text-sm font-semibold uppercase tracking-[0.15em] text-navy-700 mb-6 px-6">
       What Our Members Are Saying
     </h2>
-    <div class="carousel-mask relative">
+    <div class="max-w-6xl mx-auto px-6 carousel-mask relative">
       <div id="testimonial-track" class="flex gap-4 pb-2" style="scrollbar-width: none; -ms-overflow-style: none;">
         <div class="flex-none bg-white border border-gray-200 rounded-lg px-5 py-3 flex items-start gap-3 w-72" style="direction: ltr;">
           <span class="text-gold-500 text-sm shrink-0">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -591,8 +591,17 @@ import Layout from '../layouts/Layout.astro';
 
   // === Phone Number Auto-Format ===
   const phoneInput = document.getElementById('cb-phone');
+  let prevPhoneLen = 0;
+
   phoneInput.addEventListener('input', (e) => {
+    const isDeleting = e.target.value.length < prevPhoneLen;
     const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+
+    if (isDeleting) {
+      prevPhoneLen = e.target.value.length;
+      return;
+    }
+
     let formatted = '';
     if (digits.length > 0) formatted = '(' + digits.slice(0, 3);
     if (digits.length >= 3) formatted += ') ';
@@ -600,6 +609,7 @@ import Layout from '../layouts/Layout.astro';
     if (digits.length >= 6) formatted += '-';
     if (digits.length > 6) formatted += digits.slice(6, 10);
     e.target.value = formatted;
+    prevPhoneLen = formatted.length;
   });
 
   // === Testimonial Ticker (CSS animation, left-to-right) ===
