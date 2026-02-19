@@ -15,4 +15,32 @@ import '../styles/global.css';
 <body class="antialiased">
 <slot />
 </body>
+<script>
+// UTM Tracking - capture and store campaign parameters
+const params = new URLSearchParams(window.location.search);
+const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+// If any UTM params exist, save them all to localStorage
+const utmData = {};
+let hasUtm = false;
+
+utmKeys.forEach(key => {
+const value = params.get(key);
+if (value) {
+utmData[key] = value;
+hasUtm = true;
+}
+});
+
+if (hasUtm) {
+localStorage.setItem('utm_data', JSON.stringify(utmData));
+console.log('UTM captured:', utmData);
+} else {
+// Check if we have stored UTM data from a previous page load
+const stored = localStorage.getItem('utm_data');
+if (stored) {
+console.log('UTM from storage:', JSON.parse(stored));
+}
+}
+</script>
 </html>
