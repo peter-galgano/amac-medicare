@@ -12,40 +12,53 @@ import Layout from '../layouts/Layout.astro';
   <!-- Sticky Header -->
   <header class="sticky top-0 z-50 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl font-extrabold text-navy-900 tracking-tight">AMAC</span>
-        <span class="hidden sm:inline text-sm text-gray-500 font-medium border-l border-gray-300 pl-2">Medicare Benefits</span>
-      </div>
-      <a
-        href="tel:+18005551234"
-        class="inline-flex items-center gap-2 text-cta-600 hover:text-cta-700 font-bold text-sm sm:text-base transition-colors"
-      >
-        <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-        </svg>
-        (800) 555-1234
+      <a href="/" class="block">
+        <img src="/images/AMAC-logo.png" alt="AMAC" class="h-8 sm:h-10 w-auto" />
       </a>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <button
+          type="button"
+          data-open-modal
+          class="hidden sm:inline-flex items-center gap-1.5 text-navy-700 hover:text-navy-900 font-semibold text-sm transition-colors cursor-pointer"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+          </svg>
+          Request a Callback
+        </button>
+        <a
+          href="tel:+18005551234"
+          class="inline-flex items-center gap-2 text-cta-600 hover:text-cta-700 font-bold text-sm sm:text-base transition-colors"
+        >
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+          (800) 555-1234
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-navy-900 to-navy-800 text-white overflow-hidden">
-    <!-- Subtle pattern overlay -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  <section class="relative bg-navy-900 text-white overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="/images/amac-medicare-couple3.jpg" alt="" class="w-full h-full object-cover opacity-20" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-800/90"></div>
 
     <div class="relative max-w-4xl mx-auto px-6 pt-16 pb-20 sm:pt-20 sm:pb-24 text-center">
       <p class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold-400 mb-6 border border-gold-500/30 rounded-full px-4 py-1.5">
-        Association of Mature American Citizens AMAC
+        Association of Mature American Citizens
       </p>
 
       <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] mb-6 tracking-tight">
-        Medicare Is Confusing.<br class="hidden sm:block" />
-        <span class="text-gold-400">Even for Smart People.</span>
+        We Make Medicare<br class="hidden sm:block" />
+        <span class="text-gold-400">Make Sense.</span>
       </h1>
 
       <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-        AMAC isn't a Medicare plan — we help you find the right one.
-        Free licensed guidance, no pressure. One call does it.
+        Because Medicare shouldn't feel like a test you didn't study for.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -93,6 +106,74 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex flex-col items-center gap-1">
           <span class="text-2xl sm:text-3xl font-extrabold text-navy-900">100% Free</span>
           <span class="text-sm text-gray-500 font-medium">Licensed Guidance, No Cost</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem — Why Medicare Is Hard -->
+  <section class="py-16 sm:py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-gray-900 mb-6 leading-tight">
+            Even the Most Informed People Struggle with Medicare.
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            The plans are complex. The rules can be confusing. And the wrong decision can lead to higher premiums, unexpected out-of-pocket costs, or coverage gaps.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed font-medium">
+            That's why AMAC's Medicare Advisory Service is here.
+          </p>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-lg">
+          <img src="/images/amac-medicare.jpg" alt="Medicare Parts A through D on a clipboard with a stethoscope" class="w-full h-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clear Answers Section — With Doctors Image -->
+  <section class="py-16 sm:py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-lg">
+          <img src="/images/amac-medicare-doctors.jpg" alt="Trusted medical professionals" class="w-full h-auto" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-sm font-semibold uppercase tracking-[0.15em] text-navy-700 mb-4">
+            Clear Answers. Step-by-Step Guidance.
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Our team of trusted Medicare advisors walk you through your choices carefully and help you avoid costly mistakes.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            We explain what matters, what doesn't, and what could impact your budget.
+          </p>
+
+          <p class="text-sm font-semibold uppercase tracking-wide text-navy-900 mb-4">We help you:</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-gray-700 font-medium">Understand Medicare rules</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-gray-700 font-medium">Compare coverage options</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <span class="text-gray-700 font-medium">Check for potential savings</span>
+            </li>
+          </ul>
+
+          <p class="text-lg text-gray-500 italic">No jargon. No confusion. No pressure.</p>
         </div>
       </div>
     </div>
@@ -151,7 +232,6 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="carousel-mask relative">
         <div id="testimonial-track" class="flex gap-6 overflow-x-auto scroll-snap-x-mandatory pb-4" style="scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;">
-          <!-- Testimonials are duplicated for infinite scroll -->
           <div class="flex-none w-80 sm:w-96 bg-white rounded-xl border border-gray-200 p-6 scroll-snap-start" style="scroll-snap-align: start;">
             <div class="flex gap-0.5 mb-3 text-gold-500">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="text-gray-600 leading-relaxed mb-4">"I was overwhelmed by Medicare options. AMAC's agent walked me through everything in plain English. I finally feel confident about my coverage."</p>
@@ -242,7 +322,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Medicare Knowledge Quiz -->
-  <section class="py-16 sm:py-24 px-6">
+  <section class="relative py-16 sm:py-24 px-6">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-center text-sm font-semibold uppercase tracking-[0.15em] text-navy-700 mb-3">
         Test Your Medicare Knowledge
@@ -255,9 +335,52 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Confidence Section — With Couple Image -->
+  <section class="py-16 sm:py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-gray-900 mb-6 leading-tight">
+            Confidence Starts with a Conversation.
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            You don't need to be a Medicare expert. That's our job.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Let AMAC's trusted advisors help you make informed choices that protect both your health and your hard-earned savings.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="tel:+18005551234"
+              class="inline-flex items-center justify-center gap-2 bg-cta-600 hover:bg-cta-700 text-white font-bold px-8 py-4 rounded-lg shadow-lg shadow-cta-600/25 transition-all duration-200"
+            >
+              <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+              Call Today
+            </a>
+            <button
+              type="button"
+              data-open-modal
+              class="inline-flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-bold px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
+            >
+              Schedule Your Free Review
+            </button>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-lg">
+          <img src="/images/amac-medicare-couple1.jpg" alt="Couple reviewing their Medicare options together" class="w-full h-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Bottom CTA Section -->
   <section class="relative bg-navy-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900"></div>
+    <div class="absolute inset-0">
+      <img src="/images/amac-medicare-couple4.jpg" alt="" class="w-full h-full object-cover opacity-10" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-navy-900/95 via-navy-800/90 to-navy-900/95"></div>
     <!-- Decorative accent -->
     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cta-600 via-gold-500 to-cta-600"></div>
 
@@ -294,7 +417,8 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Footer -->
   <footer class="bg-navy-950 text-white/50 py-10 px-6">
-    <div class="max-w-4xl mx-auto text-center space-y-3">
+    <div class="max-w-4xl mx-auto text-center space-y-4">
+      <img src="/images/AMAC-logo-white.png" alt="AMAC" class="h-8 mx-auto mb-2" />
       <p class="text-sm font-medium text-white/70">
         &copy; 2026 AMAC Inc. All rights reserved.
         <span class="mx-1.5 text-white/20">|</span>
@@ -319,7 +443,7 @@ import Layout from '../layouts/Layout.astro';
         </svg>
       </button>
 
-      <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Request a Callback</h2>
+      <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Schedule Your Free Medicare Review</h2>
       <p class="text-sm text-gray-500 mb-6">We'll call you at a time that works best.</p>
 
       <form id="callback-form" class="space-y-4" novalidate>
@@ -333,6 +457,71 @@ import Layout from '../layouts/Layout.astro';
           <label for="cb-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
           <input type="tel" id="cb-phone" name="phone" required autocomplete="tel"
             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-700 focus:border-transparent transition" placeholder="(555) 123-4567" />
+        </div>
+
+        <div>
+          <label for="cb-state" class="block text-sm font-medium text-gray-700 mb-1">Residence State</label>
+          <select id="cb-state" name="state" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-navy-700 focus:border-transparent transition">
+            <option value="">Select your state</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+            <option value="DC">District of Columbia</option>
+          </select>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="cb-member" name="amac_member"
+            class="mt-1 h-4 w-4 rounded border-gray-300 text-navy-700 focus:ring-navy-700" />
+          <label for="cb-member" class="text-sm text-gray-700">I am currently an AMAC member</label>
         </div>
 
         <div>
@@ -400,7 +589,6 @@ import Layout from '../layouts/Layout.astro';
     setTimeout(() => {
       modal.classList.add('hidden');
       modal.classList.add('pointer-events-none');
-      // Reset form state
       form.classList.remove('hidden');
       success.classList.add('hidden');
       form.reset();
@@ -429,13 +617,12 @@ import Layout from '../layouts/Layout.astro';
   function getCardWidth() {
     const card = track.children[0];
     if (!card) return 0;
-    return card.offsetWidth + 24; // card width + gap
+    return card.offsetWidth + 24;
   }
 
   function autoScroll() {
     if (!isPaused) {
       track.scrollLeft += scrollSpeed;
-      // When we've scrolled past all original cards, jump back
       const resetPoint = getCardWidth() * originalCount;
       if (track.scrollLeft >= resetPoint) {
         track.scrollLeft -= resetPoint;
@@ -543,7 +730,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   function renderScore() {
-    let message, emoji;
+    let message;
     if (score <= 2) {
       message = "Medicare can be tricky — and that's exactly why AMAC exists.";
     } else if (score <= 4) {
@@ -565,17 +752,15 @@ import Layout from '../layouts/Layout.astro';
             Call AMAC Now
           </a>
           <button type="button" data-open-modal class="inline-flex items-center gap-2 border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-bold px-8 py-3 rounded-lg transition-colors duration-200 cursor-pointer">
-            Request a Callback
+            Schedule Your Free Review
           </button>
         </div>
       </div>
     `;
 
-    // Rebind modal openers for the newly created button
     container.querySelectorAll('[data-open-modal]').forEach(btn => btn.addEventListener('click', openModal));
   }
 
-  // Initialize quiz
   renderQuestion();
 </script>
 </Layout>
