@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import TopBanner from '../components/TopBanner.astro';
 import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
 ---
 <Layout>
 <main class="min-h-screen bg-white text-gray-900 font-sans">
@@ -342,20 +343,7 @@ import StickyHeader from '../components/StickyHeader.astro';
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-navy-950 text-white/50 py-10 px-6">
-    <div class="max-w-4xl mx-auto text-center space-y-4">
-      <a href="http://amac.us" target="_blank" rel="noopener noreferrer"><img src="/images/AMAC-logo-white.png" alt="AMAC" class="h-8 mx-auto mb-2" /></a>
-      <p class="text-sm font-medium text-white/70">
-        &copy; 2026 AMAC Inc. All rights reserved.
-        <span class="mx-1.5 text-white/20">|</span>
-        <a href="https://amac.us" class="underline underline-offset-2 hover:text-white/90 transition-colors">amac.us</a>
-      </p>
-      <p class="text-xs leading-relaxed max-w-lg mx-auto">
-        AMAC is not a government agency and is not affiliated with or endorsed by Medicare or any government program.
-      </p>
-    </div>
-  </footer>
+  <Footer />
 
 </main>
 
