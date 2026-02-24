@@ -67,6 +67,18 @@
   background: #fee2e2;
 }
 
+/* Subtle CTA pulse animation */
+.cta-pulse {
+  animation: cta-pulse 3s ease-in-out infinite;
+}
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 10px 15px -3px rgba(200, 16, 46, 0.25); }
+  50% { box-shadow: 0 10px 25px -3px rgba(200, 16, 46, 0.45); }
+}
+.cta-pulse:hover {
+  animation: none;
+}
+
 /* Body scroll lock */
 body.modal-open {
   overflow: hidden;
