@@ -319,7 +319,18 @@ import BottomCTA from '../components/BottomCTA.astro';
       </button>
 
       <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Speak with a Medicare Advisor</h2>
-      <p class="text-sm text-gray-500 mb-6">Enter your info and we'll connect you with a licensed agent — usually within minutes.</p>
+      <p id="modal-subtitle" class="text-sm text-gray-500 mb-6">Enter your info and we'll connect you with a licensed agent — usually within minutes.</p>
+
+      <!-- After-hours banner (hidden by default, shown via JS) -->
+      <div id="after-hours-banner" class="hidden bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-5 flex items-start gap-3">
+        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.168 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 6Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+        </svg>
+        <div>
+          <p class="text-sm font-semibold text-amber-800">We're currently outside business hours</p>
+          <p class="text-xs text-amber-700 mt-0.5">Leave your info and we'll call you the next business day (Mon–Fri, 9am–5pm ET).</p>
+        </div>
+      </div>
 
       <form id="callback-form" class="space-y-5" novalidate>
         <div>
@@ -368,6 +379,23 @@ import BottomCTA from '../components/BottomCTA.astro';
 </div>
 
 <script>
+  // === After-Hours Detection ===
+  function isAfterHours() {
+    const now = new Date();
+    const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    const day = et.getDay(); // 0=Sun, 6=Sat
+    const hour = et.getHours();
+    return day === 0 || day === 6 || hour < 9 || hour >= 17;
+  }
+
+  const afterHoursBanner = document.getElementById('after-hours-banner');
+  const modalSubtitle = document.getElementById('modal-subtitle');
+
+  if (isAfterHours()) {
+    afterHoursBanner.classList.remove('hidden');
+    modalSubtitle.textContent = 'Leave your info and a licensed agent will reach out on the next business day.';
+  }
+
   // === Callback Modal ===
   const modal = document.getElementById('callback-modal');
   const form = document.getElementById('callback-form');
